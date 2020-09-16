@@ -1,0 +1,13 @@
+Information Security sidebar
+
+* [[google_dorking:]]
+
+ELK Info
+
+  - Elasticsearch
+    - Install
+        - RPM
+        - ZIP
+    - item 1.2
+    - item 1.3 \\ you have to use double backslash for linebreaks \\ **real linebreaks** will **end the list**
+  - Logstash

@@ -1,0 +1,14 @@
+a:6:{s:2:"id";s:5:"start";s:6:"prefix";s:0:"";s:4:"text";s:466:"Information Security Docuwiki
+
+Originally started to track the Austin OWASP Study group meetings.
+
+Current topic is going through the TryHackMe tracks [[www.tryhackme.com]]
+
+ * [[google_dorking:]]
+
+DokuWiki supports **bold**, //italic//, __underlined__ and ''monospaced'' texts.
+Of course you can **__//''combine''//__** all these.
+
+You can use <sub>subscript</sub> and <sup>superscript</sup>, too.
+
+You can mark something as <del>deleted</del> as well.";s:6:"suffix";s:0:"";s:4:"date";i:1590955345;s:6:"client";s:8:"bikeride";}

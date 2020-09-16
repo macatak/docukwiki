@@ -1,0 +1,277 @@
+
+<p>
+TryHackme Google Dorking <a href="https://www.tryhackme.com/room/googledorking" class="urlextern" title="https://www.tryhackme.com/room/googledorking" rel="nofollow">https://www.tryhackme.com/room/googledorking</a>
+</p>
+
+<p>
+<strong>Search Engines 101</strong>
+</p>
+
+<p>
+These essentials in surfing the internet use “Crawlers” or “Spiders” to search for this content across the World Wide Web
+</p>
+
+<p>
+Once a web crawler discovers a domain such as mywebsite.com, it will index the entire contents of the domain, looking for keywords and other miscellaneous information
+</p>
+
+<p>
+Crawlers attempt to traverse, termed as crawling, every <abbr title="Uniform Resource Locator">URL</abbr> and file that they can find. If “mywebsite.com” had the keywords “Apple“, “Banana” and “Pear” but also had a <abbr title="Uniform Resource Locator">URL</abbr> to another website “anotherwebsite.com”, the crawler will then attempt to traverse everything on that <abbr title="Uniform Resource Locator">URL</abbr> (anotherwebsite.com) and retrieve the contents of everything within that domain respectively
+</p>
+
+<p>
+The crawler initially finds “mywebsite.com”, where it crawls the contents of the website - finding the same keywords (“Apple”, “Banana” and “Pear”) as before, but it has additionally found an external <abbr title="Uniform Resource Locator">URL</abbr>. Once the crawler is complete on “mywebsite.com”, it&#039;ll proceed to crawl the contents of the website “anotherwebsite.com”, where the keywords (“Tomatoes”, “Strawberries” and “Pineapples”) are found on it. The crawler&#039;s dictionary now contains the contents of both “mywebsite.com” and “anotherwebsite.com”, which is then stored and saved within the search engine.
+</p>
+
+<p>
+<strong>How does the “Search Engine” decide on the hierarchy of the domains that are displayed to the user?</strong>
+</p>
+
+<p>
+A logical presumption would be that website 1 → 3 would be displayed…But that&#039;s not how real-world domains work and/or are named.
+</p>
+
+<p>
+Answers
+</p>
+<ol>
+<li class="level1"><div class="li"> index</div>
+</li>
+<li class="level1"><div class="li"> crawling (not crawl)</div>
+</li>
+<li class="level1"><div class="li"> keywords</div>
+</li>
+</ol>
+
+<p>
+<strong>Search Engine Optimisation</strong>
+</p>
+
+<p>
+Search Engine Optimisation or SEO is a prevalent and lucrative topic in modern-day search engines. In fact, so much so, that entire businesses capitalise on improving a domains SEO “ranking”. At an abstract view, search engines will “prioritise” those domains that are easier to index. There are many factors in how “optimal” a domain is - resulting in something similar to a point-scoring system.
+</p>
+
+<p>
+To highlight a few influences on how these points are scored, factors such as:
+</p>
+
+<p>
+• How responsive your website is to the different browser types I.e. Google Chrome, Firefox and Internet Explorer - this includes Mobile phones!
+</p>
+
+<p>
+• How easy it is to crawl your website, or if crawling is even allowed, through the use of “Sitemaps”
+</p>
+
+<p>
+• What kind of keywords your website has 
+</p>
+
+<p>
+There is a lot of complexity in how the various search engines individually “point-score” or rank these domains - including vast algorithms. Naturally, the companies running these search engines such as Google don&#039;t share exactly how the hierarchic view of domains ultimately ends up. Although, as these are businesses at the end of the day, you can pay to advertise/boost the order of which your domain is displayed.
+</p>
+
+<p>
+There are various online tools <a href="https://seositecheckup.com/" class="urlextern" title="https://seositecheckup.com/" rel="nofollow">https://seositecheckup.com/</a>
+</p>
+
+<p>
+<strong>Who or What Regulates these “Crawlers”?</strong>
+</p>
+
+<p>
+Aside from the search engines who provide these “Crawlers”, website/web-server owners themselves ultimately stipulate what content “Crawlers” can scrape. Search engines will want to retrieve everything from a website - but there are a few cases where we wouldn&#039;t want all of the contents of our website to be indexed
+</p>
+
+<p>
+Questions
+</p>
+<ol>
+<li class="level1"><div class="li"> 1-2 - <a href="https://seositecheckup.com/seo-audit/tryhackme.com" class="urlextern" title="https://seositecheckup.com/seo-audit/tryhackme.com" rel="nofollow">https://seositecheckup.com/seo-audit/tryhackme.com</a></div>
+</li>
+<li class="level1"><div class="li"> 3-4 - <a href="https://app.neilpatel.com/en/seo_analyzer/site_audit?domain=http%3A%2F%2Fgoogledorking.cmnatic.co.uk%2F&amp;submit=Analyze+Website" class="urlextern" title="https://app.neilpatel.com/en/seo_analyzer/site_audit?domain=http%3A%2F%2Fgoogledorking.cmnatic.co.uk%2F&amp;submit=Analyze+Website" rel="nofollow">https://app.neilpatel.com/en/seo_analyzer/site_audit?domain=http%3A%2F%2Fgoogledorking.cmnatic.co.uk%2F&amp;submit=Analyze+Website</a></div>
+</li>
+</ol>
+
+<p>
+Answers
+</p>
+<ol>
+<li class="level1"><div class="li"> 83/100</div>
+</li>
+<li class="level1"><div class="li"> googledorking.cmnatic.co.uk</div>
+</li>
+</ol>
+
+<p>
+<strong>robots.txt</strong>
+</p>
+
+<p>
+This file is the first thing indexed by “Crawlers” when visiting a website.
+This file must be served at the root directory
+Defines the permissions the crawler has to the website.
+Defineswhat type of crawler is allowed (I.e. You only want Google&#039;s crawler to index your site and not MSN&#039;s).
+Can specify what files and directories that we do or don&#039;t want to be indexed by the crawler.
+</p>
+
+<p>
+Keyword		Function
+User-agent	Specify the type of crawler that can index your site (the asterisk being a wildcard, allowing all “User-agents”
+Allow		Specify the directories or file(s) that the crawler can index
+Disallow	Specify the directories or file(s) that the crawler cannot index
+Sitemap		Provide a reference to where the sitemap is located
+</p>
+
+<p>
+allow all crawlers and sitemap location:
+
+User-agent: *
+Allow: /
+Sitemap: http://snafu.com.sitemap.xml
+
+</p>
+<ul>
+<li class="level1"><div class="li"> Any crawler can index the site</div>
+</li>
+<li class="level1"><div class="li">  The crawler can index every other content that isn&#039;t contained within “/super-secret-directory/”.</div>
+</li>
+<li class="level1"><div class="li"> The crawler index all the contents within “/not-a-secret/”, but will not index anything contained within the sub-directory “/but-this-is/”.</div>
+</li>
+</ul>
+
+<p>
+
+User-agent: *
+Disallow: /super-secret-directory/
+Disallow: /not-a-secret/but-this-is/
+Sitemap:  http://snafu.com.sitemap.xml
+
+</p>
+<ul>
+<li class="level1"><div class="li"> The crawler “Googlebot” is allowed to index the entire site (“Allow: /”)</div>
+</li>
+<li class="level1"><div class="li"> The crawler “msnbot” is not allowed to index the site (Disallow: /“)</div>
+</li>
+</ul>
+
+<p>
+
+User-agent: Googlebot
+Allow: /
+User-agent: msnbot
+Disallow: /
+
+</p>
+
+<p>
+Regex is supported
+</p>
+<ul>
+<li class="level1"><div class="li"> Any crawler can index the site</div>
+</li>
+<li class="level1"><div class="li"> The crawler cannot index any file that has the extension of .ini within any directory/sub-directory using (“$”) of the site.</div>
+</li>
+</ul>
+
+<p>
+
+User-agent: *
+Disallow: /*.ini$
+Sitemap:  http://snafu.com.sitemap.xml
+
+</p>
+
+<p>
+Answers
+</p>
+<ol>
+<li class="level1"><div class="li"> ablog.com/robots.txt</div>
+</li>
+<li class="level1"><div class="li"> sitemap.xml</div>
+</li>
+<li class="level1"><div class="li"> User-Agent: Bingbot</div>
+</li>
+</ol>
+
+<p>
+4 - .conf
+</p>
+
+<p>
+<strong>Sitemaps</strong>
+</p>
+
+<p>
+Comparable to geographical maps 
+helpful for crawlers, as they specify the necessary routes to find content on the domain.
+Sitemaps” are XML formatted
+The presence of “Sitemaps” holds a fair amount of weight in influencing the “optimisation” and favorability of a website.
+</p>
+
+<p>
+Why are “Sitemaps” so Favourable for Search Engines?
+The easier a website is to “Crawl”, the more optimised it is for the “Search Engine”
+Resources like “Sitemaps” are extremely helpful for “Crawlers” as the necessary routes to content are already provided! All the crawler has to do is scrape this content - rather than going through the process of manually finding and scraping.
+</p>
+
+<p>
+1 - xml
+2 - map
+3 - route
+</p>
+
+<p>
+<strong>What is Google Dorking?</strong>
+</p>
+
+<p>
+Using Google for Advanced Searching
+</p>
+
+<p>
+Google&#039;s Advanced Operators <a href="https://www.google.com/advanced_search" class="urlextern" title="https://www.google.com/advanced_search" rel="nofollow">https://www.google.com/advanced_search</a>
+DuckDuckGo Search Syntax <a href="https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/]]" class="urlextern" title="https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/]]" rel="nofollow">https://help.duckduckgo.com/duckduckgo-help-pages/results/syntax/]]</a>
+</p>
+
+<p>
+narrow down our search query, we can use quotation marks. Google will interpret everything in between these quotation marks as exact and only return the results of the exact phrase provided
+</p>
+
+<p>
+We can use terms such as “site” (bbc.co.uk) and a query (“gchq news”) to search the specified site for the keyword we have provided to filter out content that may be harder to find otherwise
+</p>
+<pre class="code">site:bbc.co.uk gchq news</pre>
+
+<p>
+A few common terms we can search and combine include:
+filetype: 	Search for a file by its extension (e.g. PDF)
+cache:		View Google&#039;s Cached version of a specified <abbr title="Uniform Resource Locator">URL</abbr>
+intitle:	The specified phrase MUST appear in the title of the page
+</p>
+
+<p>
+search for all PDF&#039;s on bbc.co.uk
+</p>
+<pre class="code">site:bbc.co.uk filetype:pdf</pre>
+
+<p>
+Example searches
+intitle:index.of
+</p>
+
+<p>
+Answers
+</p>
+<ol>
+<li class="level1"><div class="li">  site:bbc.co.uk flood defences</div>
+</li>
+<li class="level1"><div class="li"> filetype:</div>
+</li>
+<li class="level1"><div class="li">  intitle: .login</div>
+</li>
+</ol>
+
+<p>
+Great list of useful InfoSec searches <a href="https://www.exploit-db.com/google-hacking-database" class="urlextern" title="https://www.exploit-db.com/google-hacking-database" rel="nofollow">https://www.exploit-db.com/google-hacking-database</a>
+</p>
